@@ -44,6 +44,7 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.rtxN = new System.Windows.Forms.RichTextBox();
+            this.btnCheckN = new System.Windows.Forms.Button();
             this.btnN = new System.Windows.Forms.Button();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.rtxPhi = new System.Windows.Forms.RichTextBox();
@@ -58,29 +59,28 @@
             this.btnD = new System.Windows.Forms.Button();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.btnSavePrivateKey = new System.Windows.Forms.Button();
+            this.btnSavePublicKey = new System.Windows.Forms.Button();
+            this.btnOpenPrivateKey = new System.Windows.Forms.Button();
+            this.btnOpenPublicKey = new System.Windows.Forms.Button();
+            this.btnShowPrivateKey = new System.Windows.Forms.Button();
+            this.btnShowPublicKey = new System.Windows.Forms.Button();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnSign = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
+            this.btnEncrypt = new System.Windows.Forms.Button();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCheckN = new System.Windows.Forms.Button();
-            this.splitContainer9 = new System.Windows.Forms.SplitContainer();
             this.rtxSource = new System.Windows.Forms.RichTextBox();
+            this.btnOpenSource = new System.Windows.Forms.Button();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.splitContainer9 = new System.Windows.Forms.SplitContainer();
             this.rtxEncrypt = new System.Windows.Forms.RichTextBox();
+            this.btnOpenEncrypt = new System.Windows.Forms.Button();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.rtxDecrypt = new System.Windows.Forms.RichTextBox();
-            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
-            this.btnEncrypt = new System.Windows.Forms.Button();
-            this.btnDecrypt = new System.Windows.Forms.Button();
-            this.btnSign = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
-            this.btnShowPublicKey = new System.Windows.Forms.Button();
-            this.btnShowPrivateKey = new System.Windows.Forms.Button();
-            this.btnOpenPublicKey = new System.Windows.Forms.Button();
-            this.btnOpenPrivateKey = new System.Windows.Forms.Button();
-            this.btnSavePublicKey = new System.Windows.Forms.Button();
-            this.btnSavePrivateKey = new System.Windows.Forms.Button();
-            this.btnOpenSource = new System.Windows.Forms.Button();
-            this.btnOpenEncrypt = new System.Windows.Forms.Button();
             this.btnCompare = new System.Windows.Forms.Button();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudP)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -354,6 +354,17 @@
             this.rtxN.Text = "9";
             this.rtxN.TextChanged += new System.EventHandler(this.rtxN_TextChanged);
             // 
+            // btnCheckN
+            // 
+            this.btnCheckN.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCheckN.Location = new System.Drawing.Point(-1, 1);
+            this.btnCheckN.Name = "btnCheckN";
+            this.btnCheckN.Size = new System.Drawing.Size(70, 23);
+            this.btnCheckN.TabIndex = 3;
+            this.btnCheckN.Text = "Kiểm tra";
+            this.btnCheckN.UseVisualStyleBackColor = true;
+            this.btnCheckN.Click += new System.EventHandler(this.btnCheckN_Click);
+            // 
             // btnN
             // 
             this.btnN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -558,6 +569,122 @@
             this.splitContainer7.SplitterWidth = 2;
             this.splitContainer7.TabIndex = 0;
             // 
+            // btnSavePrivateKey
+            // 
+            this.btnSavePrivateKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSavePrivateKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSavePrivateKey.Location = new System.Drawing.Point(9, 391);
+            this.btnSavePrivateKey.Name = "btnSavePrivateKey";
+            this.btnSavePrivateKey.Size = new System.Drawing.Size(80, 38);
+            this.btnSavePrivateKey.TabIndex = 5;
+            this.btnSavePrivateKey.Text = "Lưu khóa bí mật";
+            this.btnSavePrivateKey.UseVisualStyleBackColor = true;
+            // 
+            // btnSavePublicKey
+            // 
+            this.btnSavePublicKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSavePublicKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSavePublicKey.Location = new System.Drawing.Point(9, 346);
+            this.btnSavePublicKey.Name = "btnSavePublicKey";
+            this.btnSavePublicKey.Size = new System.Drawing.Size(80, 38);
+            this.btnSavePublicKey.TabIndex = 5;
+            this.btnSavePublicKey.Text = "Lưu khóa công khai";
+            this.btnSavePublicKey.UseVisualStyleBackColor = true;
+            // 
+            // btnOpenPrivateKey
+            // 
+            this.btnOpenPrivateKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOpenPrivateKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnOpenPrivateKey.Location = new System.Drawing.Point(9, 302);
+            this.btnOpenPrivateKey.Name = "btnOpenPrivateKey";
+            this.btnOpenPrivateKey.Size = new System.Drawing.Size(80, 38);
+            this.btnOpenPrivateKey.TabIndex = 5;
+            this.btnOpenPrivateKey.Text = "Mở khóa bí mật";
+            this.btnOpenPrivateKey.UseVisualStyleBackColor = true;
+            // 
+            // btnOpenPublicKey
+            // 
+            this.btnOpenPublicKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOpenPublicKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnOpenPublicKey.Location = new System.Drawing.Point(9, 258);
+            this.btnOpenPublicKey.Name = "btnOpenPublicKey";
+            this.btnOpenPublicKey.Size = new System.Drawing.Size(80, 38);
+            this.btnOpenPublicKey.TabIndex = 5;
+            this.btnOpenPublicKey.Text = "Mở khóa công khai";
+            this.btnOpenPublicKey.UseVisualStyleBackColor = true;
+            // 
+            // btnShowPrivateKey
+            // 
+            this.btnShowPrivateKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnShowPrivateKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnShowPrivateKey.Location = new System.Drawing.Point(9, 214);
+            this.btnShowPrivateKey.Name = "btnShowPrivateKey";
+            this.btnShowPrivateKey.Size = new System.Drawing.Size(80, 38);
+            this.btnShowPrivateKey.TabIndex = 5;
+            this.btnShowPrivateKey.Text = "Xem khóa bí mật";
+            this.btnShowPrivateKey.UseVisualStyleBackColor = true;
+            this.btnShowPrivateKey.Click += new System.EventHandler(this.btnShowPrivateKey_Click);
+            // 
+            // btnShowPublicKey
+            // 
+            this.btnShowPublicKey.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnShowPublicKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnShowPublicKey.Location = new System.Drawing.Point(9, 170);
+            this.btnShowPublicKey.Name = "btnShowPublicKey";
+            this.btnShowPublicKey.Size = new System.Drawing.Size(80, 38);
+            this.btnShowPublicKey.TabIndex = 5;
+            this.btnShowPublicKey.Text = "Xem khóa công khai";
+            this.btnShowPublicKey.UseVisualStyleBackColor = true;
+            this.btnShowPublicKey.Click += new System.EventHandler(this.btnShowPublicKey_Click);
+            // 
+            // btnVer
+            // 
+            this.btnVer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnVer.Location = new System.Drawing.Point(9, 141);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(80, 23);
+            this.btnVer.TabIndex = 5;
+            this.btnVer.Text = "Xác thực";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnSign
+            // 
+            this.btnSign.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSign.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSign.Location = new System.Drawing.Point(9, 112);
+            this.btnSign.Name = "btnSign";
+            this.btnSign.Size = new System.Drawing.Size(80, 23);
+            this.btnSign.TabIndex = 5;
+            this.btnSign.Text = "Ký";
+            this.btnSign.UseVisualStyleBackColor = true;
+            this.btnSign.Click += new System.EventHandler(this.btnSign_Click);
+            // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnDecrypt.Location = new System.Drawing.Point(9, 83);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(80, 23);
+            this.btnDecrypt.TabIndex = 5;
+            this.btnDecrypt.Text = "Giải mã";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
+            // 
+            // btnEncrypt
+            // 
+            this.btnEncrypt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnEncrypt.Location = new System.Drawing.Point(9, 54);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(80, 23);
+            this.btnEncrypt.TabIndex = 5;
+            this.btnEncrypt.Text = "Mã hóa";
+            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
+            // 
             // splitContainer8
             // 
             this.splitContainer8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -581,25 +708,41 @@
             this.splitContainer8.SplitterWidth = 2;
             this.splitContainer8.TabIndex = 25;
             // 
-            // toolTip1
+            // rtxSource
             // 
-            this.toolTip1.AutomaticDelay = 250;
-            this.toolTip1.AutoPopDelay = 1250;
-            this.toolTip1.InitialDelay = 250;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ReshowDelay = 50;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.rtxSource.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtxSource.Location = new System.Drawing.Point(0, 25);
+            this.rtxSource.Name = "rtxSource";
+            this.rtxSource.Size = new System.Drawing.Size(298, 173);
+            this.rtxSource.TabIndex = 8;
+            this.rtxSource.Text = "3";
+            this.toolTip1.SetToolTip(this.rtxSource, "Nhập bản rõ");
             // 
-            // btnCheckN
+            // btnOpenSource
             // 
-            this.btnCheckN.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCheckN.Location = new System.Drawing.Point(-1, 1);
-            this.btnCheckN.Name = "btnCheckN";
-            this.btnCheckN.Size = new System.Drawing.Size(70, 23);
-            this.btnCheckN.TabIndex = 3;
-            this.btnCheckN.Text = "Kiểm tra";
-            this.btnCheckN.UseVisualStyleBackColor = true;
-            this.btnCheckN.Click += new System.EventHandler(this.btnCheckN_Click);
+            this.btnOpenSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenSource.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnOpenSource.Location = new System.Drawing.Point(239, 1);
+            this.btnOpenSource.Name = "btnOpenSource";
+            this.btnOpenSource.Size = new System.Drawing.Size(60, 23);
+            this.btnOpenSource.TabIndex = 5;
+            this.btnOpenSource.Text = "Mở...";
+            this.btnOpenSource.UseVisualStyleBackColor = true;
+            this.btnOpenSource.Click += new System.EventHandler(this.btnGenQ_Click);
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.BackColor = System.Drawing.Color.Honeydew;
+            this.linkLabel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkLabel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.linkLabel7.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel7.Location = new System.Drawing.Point(0, 0);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(298, 25);
+            this.linkLabel7.TabIndex = 7;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "Bản rõ";
+            this.linkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // splitContainer9
             // 
@@ -626,30 +769,6 @@
             this.splitContainer9.SplitterWidth = 2;
             this.splitContainer9.TabIndex = 0;
             // 
-            // rtxSource
-            // 
-            this.rtxSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtxSource.Location = new System.Drawing.Point(0, 25);
-            this.rtxSource.Name = "rtxSource";
-            this.rtxSource.Size = new System.Drawing.Size(298, 173);
-            this.rtxSource.TabIndex = 8;
-            this.rtxSource.Text = "3";
-            this.toolTip1.SetToolTip(this.rtxSource, "Nhập bản rõ");
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel7.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel7.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(298, 25);
-            this.linkLabel7.TabIndex = 7;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "Bản rõ";
-            this.linkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // rtxEncrypt
             // 
             this.rtxEncrypt.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -659,6 +778,18 @@
             this.rtxEncrypt.TabIndex = 8;
             this.rtxEncrypt.Text = "3";
             this.toolTip1.SetToolTip(this.rtxEncrypt, "Nhập bản mã");
+            // 
+            // btnOpenEncrypt
+            // 
+            this.btnOpenEncrypt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnOpenEncrypt.Location = new System.Drawing.Point(239, 1);
+            this.btnOpenEncrypt.Name = "btnOpenEncrypt";
+            this.btnOpenEncrypt.Size = new System.Drawing.Size(60, 23);
+            this.btnOpenEncrypt.TabIndex = 5;
+            this.btnOpenEncrypt.Text = "Mở...";
+            this.btnOpenEncrypt.UseVisualStyleBackColor = true;
+            this.btnOpenEncrypt.Click += new System.EventHandler(this.btnGenQ_Click);
             // 
             // linkLabel8
             // 
@@ -685,6 +816,18 @@
             this.rtxDecrypt.Text = "3";
             this.toolTip1.SetToolTip(this.rtxDecrypt, "Bản giải mã");
             // 
+            // btnCompare
+            // 
+            this.btnCompare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCompare.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCompare.Location = new System.Drawing.Point(239, 1);
+            this.btnCompare.Name = "btnCompare";
+            this.btnCompare.Size = new System.Drawing.Size(60, 23);
+            this.btnCompare.TabIndex = 5;
+            this.btnCompare.Text = "So sánh";
+            this.btnCompare.UseVisualStyleBackColor = true;
+            this.btnCompare.Click += new System.EventHandler(this.btnCompare_Click);
+            // 
             // linkLabel9
             // 
             this.linkLabel9.BackColor = System.Drawing.Color.Honeydew;
@@ -699,155 +842,14 @@
             this.linkLabel9.Text = "Bản giải mã";
             this.linkLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnEncrypt
+            // toolTip1
             // 
-            this.btnEncrypt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnEncrypt.Location = new System.Drawing.Point(9, 54);
-            this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(80, 23);
-            this.btnEncrypt.TabIndex = 5;
-            this.btnEncrypt.Text = "Mã hóa";
-            this.btnEncrypt.UseVisualStyleBackColor = true;
-            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
-            // 
-            // btnDecrypt
-            // 
-            this.btnDecrypt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnDecrypt.Location = new System.Drawing.Point(9, 83);
-            this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(80, 23);
-            this.btnDecrypt.TabIndex = 5;
-            this.btnDecrypt.Text = "Giải mã";
-            this.btnDecrypt.UseVisualStyleBackColor = true;
-            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
-            // 
-            // btnSign
-            // 
-            this.btnSign.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSign.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSign.Location = new System.Drawing.Point(9, 112);
-            this.btnSign.Name = "btnSign";
-            this.btnSign.Size = new System.Drawing.Size(80, 23);
-            this.btnSign.TabIndex = 5;
-            this.btnSign.Text = "Ký";
-            this.btnSign.UseVisualStyleBackColor = true;
-            this.btnSign.Click += new System.EventHandler(this.btnSign_Click);
-            // 
-            // btnVer
-            // 
-            this.btnVer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnVer.Location = new System.Drawing.Point(9, 141);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(80, 23);
-            this.btnVer.TabIndex = 5;
-            this.btnVer.Text = "Xác thực";
-            this.btnVer.UseVisualStyleBackColor = true;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
-            // 
-            // btnShowPublicKey
-            // 
-            this.btnShowPublicKey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnShowPublicKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnShowPublicKey.Location = new System.Drawing.Point(9, 170);
-            this.btnShowPublicKey.Name = "btnShowPublicKey";
-            this.btnShowPublicKey.Size = new System.Drawing.Size(80, 38);
-            this.btnShowPublicKey.TabIndex = 5;
-            this.btnShowPublicKey.Text = "Xem khóa công khai";
-            this.btnShowPublicKey.UseVisualStyleBackColor = true;
-            // 
-            // btnShowPrivateKey
-            // 
-            this.btnShowPrivateKey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnShowPrivateKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnShowPrivateKey.Location = new System.Drawing.Point(9, 214);
-            this.btnShowPrivateKey.Name = "btnShowPrivateKey";
-            this.btnShowPrivateKey.Size = new System.Drawing.Size(80, 38);
-            this.btnShowPrivateKey.TabIndex = 5;
-            this.btnShowPrivateKey.Text = "Xem khóa bí mật";
-            this.btnShowPrivateKey.UseVisualStyleBackColor = true;
-            // 
-            // btnOpenPublicKey
-            // 
-            this.btnOpenPublicKey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOpenPublicKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOpenPublicKey.Location = new System.Drawing.Point(9, 258);
-            this.btnOpenPublicKey.Name = "btnOpenPublicKey";
-            this.btnOpenPublicKey.Size = new System.Drawing.Size(80, 38);
-            this.btnOpenPublicKey.TabIndex = 5;
-            this.btnOpenPublicKey.Text = "Mở khóa công khai";
-            this.btnOpenPublicKey.UseVisualStyleBackColor = true;
-            // 
-            // btnOpenPrivateKey
-            // 
-            this.btnOpenPrivateKey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOpenPrivateKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOpenPrivateKey.Location = new System.Drawing.Point(9, 302);
-            this.btnOpenPrivateKey.Name = "btnOpenPrivateKey";
-            this.btnOpenPrivateKey.Size = new System.Drawing.Size(80, 38);
-            this.btnOpenPrivateKey.TabIndex = 5;
-            this.btnOpenPrivateKey.Text = "Mở khóa bí mật";
-            this.btnOpenPrivateKey.UseVisualStyleBackColor = true;
-            // 
-            // btnSavePublicKey
-            // 
-            this.btnSavePublicKey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSavePublicKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSavePublicKey.Location = new System.Drawing.Point(9, 346);
-            this.btnSavePublicKey.Name = "btnSavePublicKey";
-            this.btnSavePublicKey.Size = new System.Drawing.Size(80, 38);
-            this.btnSavePublicKey.TabIndex = 5;
-            this.btnSavePublicKey.Text = "Lưu khóa công khai";
-            this.btnSavePublicKey.UseVisualStyleBackColor = true;
-            // 
-            // btnSavePrivateKey
-            // 
-            this.btnSavePrivateKey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSavePrivateKey.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnSavePrivateKey.Location = new System.Drawing.Point(9, 391);
-            this.btnSavePrivateKey.Name = "btnSavePrivateKey";
-            this.btnSavePrivateKey.Size = new System.Drawing.Size(80, 38);
-            this.btnSavePrivateKey.TabIndex = 5;
-            this.btnSavePrivateKey.Text = "Lưu khóa bí mật";
-            this.btnSavePrivateKey.UseVisualStyleBackColor = true;
-            // 
-            // btnOpenSource
-            // 
-            this.btnOpenSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpenSource.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOpenSource.Location = new System.Drawing.Point(239, 1);
-            this.btnOpenSource.Name = "btnOpenSource";
-            this.btnOpenSource.Size = new System.Drawing.Size(60, 23);
-            this.btnOpenSource.TabIndex = 5;
-            this.btnOpenSource.Text = "Mở...";
-            this.btnOpenSource.UseVisualStyleBackColor = true;
-            this.btnOpenSource.Click += new System.EventHandler(this.btnGenQ_Click);
-            // 
-            // btnOpenEncrypt
-            // 
-            this.btnOpenEncrypt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOpenEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOpenEncrypt.Location = new System.Drawing.Point(239, 1);
-            this.btnOpenEncrypt.Name = "btnOpenEncrypt";
-            this.btnOpenEncrypt.Size = new System.Drawing.Size(60, 23);
-            this.btnOpenEncrypt.TabIndex = 5;
-            this.btnOpenEncrypt.Text = "Mở...";
-            this.btnOpenEncrypt.UseVisualStyleBackColor = true;
-            this.btnOpenEncrypt.Click += new System.EventHandler(this.btnGenQ_Click);
-            // 
-            // btnCompare
-            // 
-            this.btnCompare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCompare.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCompare.Location = new System.Drawing.Point(239, 1);
-            this.btnCompare.Name = "btnCompare";
-            this.btnCompare.Size = new System.Drawing.Size(60, 23);
-            this.btnCompare.TabIndex = 5;
-            this.btnCompare.Text = "So sánh";
-            this.btnCompare.UseVisualStyleBackColor = true;
-            this.btnCompare.Click += new System.EventHandler(this.btnCompare_Click);
+            this.toolTip1.AutomaticDelay = 250;
+            this.toolTip1.AutoPopDelay = 1250;
+            this.toolTip1.InitialDelay = 250;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 50;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // frmRSA
             // 
