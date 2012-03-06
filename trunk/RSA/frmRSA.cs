@@ -355,7 +355,8 @@ namespace RSA
         {
             string s = "";
             s += "d = " + d.ToString() + "\n";
-            s += "n = " + n.ToString();
+            s += "p = " + p.ToString() + "\n";
+            s += "q = " + q.ToString() ;            
             MessageBox.Show(s, "Khóa bí mật", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
