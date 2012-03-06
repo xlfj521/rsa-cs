@@ -343,5 +343,21 @@ namespace RSA
             }
         }
 
+        private void btnShowPublicKey_Click(object sender, EventArgs e1)//hi bị trùng với biến BigInteger e
+        {
+            string s = "";
+            s += "e = " + e.ToString() + "\n";
+            s += "n = " + n.ToString();
+            MessageBox.Show(s, "Khóa công khai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnShowPrivateKey_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            s += "d = " + d.ToString() + "\n";
+            s += "n = " + n.ToString();
+            MessageBox.Show(s, "Khóa bí mật", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }
