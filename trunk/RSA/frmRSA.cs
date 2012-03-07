@@ -5,13 +5,21 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace RSA
 {
     public partial class frmRSA : Form
     {
-        BigInteger p= new BigInteger(3), q=new BigInteger(3), n = new BigInteger(9),
-            phi=new BigInteger(4), e=new BigInteger(3), d = new BigInteger(3), m = new BigInteger(3), c = new BigInteger(3);
+        BigInteger 
+            p= new BigInteger(3),
+            q=new BigInteger(3), 
+            n = new BigInteger(9),
+            phi=new BigInteger(4), 
+            e=new BigInteger(3), 
+            d = new BigInteger(3),
+            m = new BigInteger(3), 
+            c = new BigInteger(3);
         int radix = 10;
         public frmRSA()
         {
@@ -19,20 +27,42 @@ namespace RSA
             rtxP.LostFocus += new EventHandler(rtxP_LostFocus);
             rtxQ.LostFocus += new EventHandler(rtxQ_LostFocus);
             rtxE.LostFocus += new EventHandler(rtxE_LostFocus);
+            rtxN.LostFocus += new EventHandler(rtxN_LostFocus);
+            rtxD.LostFocus += new EventHandler(rtxD_LostFocus);
             rtxSource.LostFocus += new EventHandler(rtxSource_LostFocus);
             rtxEncrypt.LostFocus += new EventHandler(rtxEncrypt_LostFocus);
+        }
+
+        void rtxD_LostFocus(object sender, EventArgs e)
+        {
+            if (checkBase(rtxD.Text) == false)
+                setErrorToolTip(rtxD, "d phải là một số nguyên dương, vui lòng nhập lại!");
+            else
+                setSuccessToolTip(ref d, rtxD, "Nhập khóa bí mật d");
+        }
+
+        void rtxN_LostFocus(object sender, EventArgs e)
+        {
+            if (checkBase(rtxN.Text) == false)
+                setErrorToolTip(rtxN, "n phải là một số nguyên dương, vui lòng nhập lại!");
+            else
+                setSuccessToolTip(ref n, rtxN, "Nhập khóa công khai n");
         }
 
         void rtxEncrypt_LostFocus(object sender, EventArgs e)
         {
             if (checkBase(rtxEncrypt.Text) == false)
                 setErrorToolTip(rtxEncrypt, "Bản mã phải là một số nguyên dương, vui lòng nhập lại!");
+            else
+                setSuccessToolTip(ref c, rtxEncrypt, "Nhập bản mã");
         }
 
         void rtxSource_LostFocus(object sender, EventArgs e)
         {
             if (checkBase(rtxSource.Text) == false)
                 setErrorToolTip(rtxSource, "Bản rõ phải là một số nguyên dương, vui lòng nhập lại!");
+            else
+                setSuccessToolTip(ref m, rtxSource, "Nhập bản rõ");
         }
 
         
@@ -40,6 +70,8 @@ namespace RSA
         {
             if (checkBase(rtxE.Text) == false)
                 setErrorToolTip(rtxE, "e phải là một số nguyên dương, vui lòng nhập lại!");
+            else
+                setSuccessToolTip(ref e, rtxE, "Nhập khóa công khai e");
         }
 
         void rtxQ_LostFocus(object sender, EventArgs e)
@@ -173,8 +205,8 @@ namespace RSA
 
         private void rtxN_TextChanged(object sender, EventArgs e)
         {
-            if (checkBase(rtxN.Text) == false)
-                setErrorToolTip(rtxQ, "n phải là một số nguyên dương, vui lòng nhập lại!");
+            /*if (checkBase(rtxN.Text) == false)
+                setErrorToolTip(rtxQ, "n phải là một số nguyên dương, vui lòng nhập lại!");*/
         }
 
         private void rtxE_TextChanged(object sender, EventArgs e1)
@@ -184,8 +216,7 @@ namespace RSA
 
         private void rtxD_TextChanged(object sender, EventArgs e)
         {
-            if (checkBase(rtxN.Text) == false)
-                setErrorToolTip(rtxQ, "n phải là một số nguyên dương, vui lòng nhập lại!");
+            
         }
 
         private void btnD_Click(object sender, EventArgs e1)
@@ -257,6 +288,7 @@ namespace RSA
                 }
                 if (j == b.Length) return false;
             }
+            
             return true;
         }
 
@@ -290,48 +322,82 @@ namespace RSA
             catch { }
         }
 
+        private void setSuccessToolTip(ref BigInteger b, RichTextBox control, string caption)
+        {
+            try
+            {
+                toolTip1.SetToolTip(control, caption);
+            }
+            catch { }
+            b = new BigInteger(control.Text, radix);
+        }
+
         private void btnEncrypt_Click(object sender, EventArgs e1)
         {
             m = new BigInteger(rtxSource.Text, radix);
-            if (m >= n) MessageBox.Show("Bản rõ phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
+            if (m >= n)
             {
-                m = m.modPow(e, n);
-                rtxEncrypt.Text = m.ToString();
+                MessageBox.Show("Bản rõ phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+            if(e>=n)
+            {
+                MessageBox.Show("e phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            m = m.modPow(e, n);
+            rtxEncrypt.Text = m.ToString();
         }
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
             c = new BigInteger(rtxEncrypt.Text, radix);
-            if (c >= n) MessageBox.Show("Bản mã phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
+            if (c >= n)
             {
-                c = c.modPow(d, n);
-                rtxDecrypt.Text = c.ToString();
+                MessageBox.Show("Bản mã phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+            if(d>=n)
+            {
+                MessageBox.Show("d phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            c = c.modPow(d, n);
+            rtxDecrypt.Text = c.ToString();
         }
 
         private void btnSign_Click(object sender, EventArgs e)
         {
             m = new BigInteger(rtxSource.Text, radix);
-            if (m >= n) MessageBox.Show("Bản rõ phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
+            if (m >= n)
             {
-                m = m.modPow(d, n);
-                rtxEncrypt.Text = m.ToString();
+                MessageBox.Show("Bản rõ phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+            if(d>=n)
+            {
+                MessageBox.Show("d phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            m = m.modPow(d, n);
+            rtxEncrypt.Text = m.ToString();
         }
 
         private void btnVer_Click(object sender, EventArgs e1)
         {
             c = new BigInteger(rtxEncrypt.Text, radix);
-            if (c >= n) MessageBox.Show("Bản mã phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
+            if (c >= n)
             {
-                c = c.modPow(e, n);
-                rtxDecrypt.Text = c.ToString();
+                MessageBox.Show("Bản mã phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+            if(e>=n)
+            {
+                MessageBox.Show("e phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            c = c.modPow(e, n);
+            rtxDecrypt.Text = c.ToString();
         }
 
         private void btnCompare_Click(object sender, EventArgs e)
@@ -363,5 +429,58 @@ namespace RSA
             MessageBox.Show(s, "Khóa bí mật", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void OpenFile(RichTextBox rtx, String filter)
+        {
+            OpenFileDialog f = new OpenFileDialog();
+            f.Multiselect = false;
+            f.Filter = filter;
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fsr = new FileStream(f.FileName, FileMode.Open, FileAccess.Read);
+                StreamReader str = new StreamReader(fsr, Encoding.ASCII);
+                rtx.Text = str.ReadToEnd();
+                rtx.Focus();
+            }
+        }
+
+        private void btnOpenSource_Click(object sender, EventArgs e)
+        {
+            OpenFile(rtxSource, "Source Files|*.src");
+        }
+
+        private void btnOpenEncrypt_Click(object sender, EventArgs e)
+        {
+            OpenFile(rtxEncrypt, "Encrypt Files|*.enc");
+        }
+
+        private void btnOpenPublicKey_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog f = new OpenFileDialog();
+            f.Multiselect = false;
+            f.Filter = "Public Key Files|*.pub";
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fsr = new FileStream(f.FileName, FileMode.Open, FileAccess.Read);
+                StreamReader str = new StreamReader(fsr, Encoding.ASCII);
+                String s = str.ReadToEnd();
+                String[] st = s.Split('|');
+                if(st.Length != 2)
+                {
+                    MessageBox.Show("Định dạng dữ liệu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    if (!checkBase(st[0]) || !checkBase(st[1]))
+                    {
+                        MessageBox.Show("Định dạng dữ liệu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        rtxN.Text = st[0];
+                        rtxE.Text = st[1];
+                    }
+                }
+            }
+        }
     }
 }
