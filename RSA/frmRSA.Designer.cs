@@ -613,6 +613,7 @@
             this.btnOpenPublicKey.TabIndex = 5;
             this.btnOpenPublicKey.Text = "Mở khóa công khai";
             this.btnOpenPublicKey.UseVisualStyleBackColor = true;
+            this.btnOpenPublicKey.Click += new System.EventHandler(this.btnOpenPublicKey_Click);
             // 
             // btnShowPrivateKey
             // 
@@ -729,7 +730,7 @@
             this.btnOpenSource.TabIndex = 5;
             this.btnOpenSource.Text = "Mở...";
             this.btnOpenSource.UseVisualStyleBackColor = true;
-            this.btnOpenSource.Click += new System.EventHandler(this.btnGenQ_Click);
+            this.btnOpenSource.Click += new System.EventHandler(this.btnOpenSource_Click);
             // 
             // linkLabel7
             // 
@@ -790,7 +791,7 @@
             this.btnOpenEncrypt.TabIndex = 5;
             this.btnOpenEncrypt.Text = "Mở...";
             this.btnOpenEncrypt.UseVisualStyleBackColor = true;
-            this.btnOpenEncrypt.Click += new System.EventHandler(this.btnGenQ_Click);
+            this.btnOpenEncrypt.Click += new System.EventHandler(this.btnOpenEncrypt_Click);
             // 
             // linkLabel8
             // 
