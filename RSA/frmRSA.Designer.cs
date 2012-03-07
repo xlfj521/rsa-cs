@@ -36,28 +36,28 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.rtxP = new System.Windows.Forms.RichTextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.llblP = new System.Windows.Forms.LinkLabel();
             this.rtxQ = new System.Windows.Forms.RichTextBox();
             this.btnGenQ = new System.Windows.Forms.Button();
             this.nudQ = new System.Windows.Forms.NumericUpDown();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.llblQ = new System.Windows.Forms.LinkLabel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.rtxN = new System.Windows.Forms.RichTextBox();
             this.btnCheckN = new System.Windows.Forms.Button();
             this.btnN = new System.Windows.Forms.Button();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.llblN = new System.Windows.Forms.LinkLabel();
             this.rtxPhi = new System.Windows.Forms.RichTextBox();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.llblPhi = new System.Windows.Forms.LinkLabel();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.rtxE = new System.Windows.Forms.RichTextBox();
             this.btnCheckE = new System.Windows.Forms.Button();
             this.btnGenE = new System.Windows.Forms.Button();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.llblE = new System.Windows.Forms.LinkLabel();
             this.rtxD = new System.Windows.Forms.RichTextBox();
             this.btnCheckD = new System.Windows.Forms.Button();
             this.btnD = new System.Windows.Forms.Button();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.llblD = new System.Windows.Forms.LinkLabel();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.btnSavePrivateKey = new System.Windows.Forms.Button();
             this.btnSavePublicKey = new System.Windows.Forms.Button();
@@ -71,15 +71,18 @@
             this.btnEncrypt = new System.Windows.Forms.Button();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.rtxSource = new System.Windows.Forms.RichTextBox();
+            this.btnSaveSource = new System.Windows.Forms.Button();
             this.btnOpenSource = new System.Windows.Forms.Button();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
+            this.llblSource = new System.Windows.Forms.LinkLabel();
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
             this.rtxEncrypt = new System.Windows.Forms.RichTextBox();
+            this.btnSaveEncrypt = new System.Windows.Forms.Button();
             this.btnOpenEncrypt = new System.Windows.Forms.Button();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.llblEncrypt = new System.Windows.Forms.LinkLabel();
             this.rtxDecrypt = new System.Windows.Forms.RichTextBox();
+            this.btnSaveDecrypt = new System.Windows.Forms.Button();
             this.btnCompare = new System.Windows.Forms.Button();
-            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.llblDecrypt = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudP)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -201,14 +204,14 @@
             this.splitContainer4.Panel1.Controls.Add(this.rtxP);
             this.splitContainer4.Panel1.Controls.Add(this.btnGenP);
             this.splitContainer4.Panel1.Controls.Add(this.nudP);
-            this.splitContainer4.Panel1.Controls.Add(this.linkLabel1);
+            this.splitContainer4.Panel1.Controls.Add(this.llblP);
             // 
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.rtxQ);
             this.splitContainer4.Panel2.Controls.Add(this.btnGenQ);
             this.splitContainer4.Panel2.Controls.Add(this.nudQ);
-            this.splitContainer4.Panel2.Controls.Add(this.linkLabel2);
+            this.splitContainer4.Panel2.Controls.Add(this.llblQ);
             this.splitContainer4.Size = new System.Drawing.Size(604, 200);
             this.splitContainer4.SplitterDistance = 300;
             this.splitContainer4.SplitterWidth = 2;
@@ -223,21 +226,21 @@
             this.rtxP.TabIndex = 4;
             this.rtxP.Text = "3";
             this.toolTip1.SetToolTip(this.rtxP, "Nhập số nguyên tố p");
-            this.rtxP.TextChanged += new System.EventHandler(this.rtxP_TextChanged);
             // 
-            // linkLabel1
+            // llblP
             // 
-            this.linkLabel1.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(298, 25);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Khóa bí mật p";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblP.BackColor = System.Drawing.Color.Honeydew;
+            this.llblP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.llblP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.llblP.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblP.Location = new System.Drawing.Point(0, 0);
+            this.llblP.Name = "llblP";
+            this.llblP.Size = new System.Drawing.Size(298, 25);
+            this.llblP.TabIndex = 3;
+            this.llblP.TabStop = true;
+            this.llblP.Text = "Khóa bí mật p";
+            this.llblP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblP.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblP_LinkClicked);
             // 
             // rtxQ
             // 
@@ -248,7 +251,6 @@
             this.rtxQ.TabIndex = 6;
             this.rtxQ.Text = "3";
             this.toolTip1.SetToolTip(this.rtxQ, "Nhập số nguyên tố q");
-            this.rtxQ.TextChanged += new System.EventHandler(this.rtxQ_TextChanged);
             // 
             // btnGenQ
             // 
@@ -285,19 +287,20 @@
             0,
             0});
             // 
-            // linkLabel2
+            // llblQ
             // 
-            this.linkLabel2.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel2.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(300, 25);
-            this.linkLabel2.TabIndex = 4;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Khóa bí mật q";
-            this.linkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblQ.BackColor = System.Drawing.Color.Honeydew;
+            this.llblQ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.llblQ.Dock = System.Windows.Forms.DockStyle.Top;
+            this.llblQ.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblQ.Location = new System.Drawing.Point(0, 0);
+            this.llblQ.Name = "llblQ";
+            this.llblQ.Size = new System.Drawing.Size(300, 25);
+            this.llblQ.TabIndex = 4;
+            this.llblQ.TabStop = true;
+            this.llblQ.Text = "Khóa bí mật q";
+            this.llblQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblP_LinkClicked);
             // 
             // splitContainer3
             // 
@@ -333,12 +336,12 @@
             this.splitContainer6.Panel1.Controls.Add(this.rtxN);
             this.splitContainer6.Panel1.Controls.Add(this.btnCheckN);
             this.splitContainer6.Panel1.Controls.Add(this.btnN);
-            this.splitContainer6.Panel1.Controls.Add(this.linkLabel3);
+            this.splitContainer6.Panel1.Controls.Add(this.llblN);
             // 
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.rtxPhi);
-            this.splitContainer6.Panel2.Controls.Add(this.linkLabel6);
+            this.splitContainer6.Panel2.Controls.Add(this.llblPhi);
             this.splitContainer6.Size = new System.Drawing.Size(604, 200);
             this.splitContainer6.SplitterDistance = 300;
             this.splitContainer6.SplitterWidth = 2;
@@ -353,7 +356,6 @@
             this.rtxN.TabIndex = 9;
             this.rtxN.Text = "9";
             this.toolTip1.SetToolTip(this.rtxN, "Nhập khóa công khai n");
-            this.rtxN.TextChanged += new System.EventHandler(this.rtxN_TextChanged);
             // 
             // btnCheckN
             // 
@@ -378,19 +380,20 @@
             this.btnN.UseVisualStyleBackColor = true;
             this.btnN.Click += new System.EventHandler(this.btnN_Click);
             // 
-            // linkLabel3
+            // llblN
             // 
-            this.linkLabel3.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel3.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(298, 25);
-            this.linkLabel3.TabIndex = 7;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Khóa công khai n=p*q";
-            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblN.BackColor = System.Drawing.Color.Honeydew;
+            this.llblN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.llblN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.llblN.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblN.Location = new System.Drawing.Point(0, 0);
+            this.llblN.Name = "llblN";
+            this.llblN.Size = new System.Drawing.Size(298, 25);
+            this.llblN.TabIndex = 7;
+            this.llblN.TabStop = true;
+            this.llblN.Text = "Khóa công khai n=p*q";
+            this.llblN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblN.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblN_LinkClicked);
             // 
             // rtxPhi
             // 
@@ -401,23 +404,23 @@
             this.rtxPhi.Size = new System.Drawing.Size(300, 173);
             this.rtxPhi.TabIndex = 12;
             this.rtxPhi.Text = "4";
-            this.rtxPhi.TextChanged += new System.EventHandler(this.rtxPhi_TextChanged);
+            this.toolTip1.SetToolTip(this.rtxPhi, "phi(n)");
             // 
-            // linkLabel6
+            // llblPhi
             // 
-            this.linkLabel6.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.linkLabel6.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel6.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel6.Margin = new System.Windows.Forms.Padding(0);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(300, 25);
-            this.linkLabel6.TabIndex = 10;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "phi(n) = (p-1)*(q-1)";
-            this.linkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblPhi.BackColor = System.Drawing.Color.Honeydew;
+            this.llblPhi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.llblPhi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.llblPhi.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.llblPhi.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblPhi.Location = new System.Drawing.Point(0, 0);
+            this.llblPhi.Margin = new System.Windows.Forms.Padding(0);
+            this.llblPhi.Name = "llblPhi";
+            this.llblPhi.Size = new System.Drawing.Size(300, 25);
+            this.llblPhi.TabIndex = 10;
+            this.llblPhi.TabStop = true;
+            this.llblPhi.Text = "phi(n) = (p-1)*(q-1)";
+            this.llblPhi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // splitContainer5
             // 
@@ -432,14 +435,14 @@
             this.splitContainer5.Panel1.Controls.Add(this.rtxE);
             this.splitContainer5.Panel1.Controls.Add(this.btnCheckE);
             this.splitContainer5.Panel1.Controls.Add(this.btnGenE);
-            this.splitContainer5.Panel1.Controls.Add(this.linkLabel4);
+            this.splitContainer5.Panel1.Controls.Add(this.llblE);
             // 
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.rtxD);
             this.splitContainer5.Panel2.Controls.Add(this.btnCheckD);
             this.splitContainer5.Panel2.Controls.Add(this.btnD);
-            this.splitContainer5.Panel2.Controls.Add(this.linkLabel5);
+            this.splitContainer5.Panel2.Controls.Add(this.llblD);
             this.splitContainer5.Size = new System.Drawing.Size(604, 207);
             this.splitContainer5.SplitterDistance = 300;
             this.splitContainer5.SplitterWidth = 2;
@@ -454,7 +457,6 @@
             this.rtxE.TabIndex = 16;
             this.rtxE.Text = "3";
             this.toolTip1.SetToolTip(this.rtxE, "Nhập khóa công khai e");
-            this.rtxE.TextChanged += new System.EventHandler(this.rtxE_TextChanged);
             // 
             // btnCheckE
             // 
@@ -479,19 +481,20 @@
             this.btnGenE.UseVisualStyleBackColor = true;
             this.btnGenE.Click += new System.EventHandler(this.btnGenE_Click);
             // 
-            // linkLabel4
+            // llblE
             // 
-            this.linkLabel4.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel4.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(298, 25);
-            this.linkLabel4.TabIndex = 14;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Khóa công khai e";
-            this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblE.BackColor = System.Drawing.Color.Honeydew;
+            this.llblE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.llblE.Dock = System.Windows.Forms.DockStyle.Top;
+            this.llblE.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblE.Location = new System.Drawing.Point(0, 0);
+            this.llblE.Name = "llblE";
+            this.llblE.Size = new System.Drawing.Size(298, 25);
+            this.llblE.TabIndex = 14;
+            this.llblE.TabStop = true;
+            this.llblE.Text = "Khóa công khai e";
+            this.llblE.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblE.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblN_LinkClicked);
             // 
             // rtxD
             // 
@@ -502,7 +505,6 @@
             this.rtxD.TabIndex = 19;
             this.rtxD.Text = "3";
             this.toolTip1.SetToolTip(this.rtxD, "\"Nhập khóa bí mật d\"");
-            this.rtxD.TextChanged += new System.EventHandler(this.rtxD_TextChanged);
             // 
             // btnCheckD
             // 
@@ -527,19 +529,20 @@
             this.btnD.UseVisualStyleBackColor = true;
             this.btnD.Click += new System.EventHandler(this.btnD_Click);
             // 
-            // linkLabel5
+            // llblD
             // 
-            this.linkLabel5.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel5.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(300, 25);
-            this.linkLabel5.TabIndex = 17;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Khóa bí mật d";
-            this.linkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblD.BackColor = System.Drawing.Color.Honeydew;
+            this.llblD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.llblD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.llblD.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblD.Location = new System.Drawing.Point(0, 0);
+            this.llblD.Name = "llblD";
+            this.llblD.Size = new System.Drawing.Size(300, 25);
+            this.llblD.TabIndex = 17;
+            this.llblD.TabStop = true;
+            this.llblD.Text = "Khóa bí mật d";
+            this.llblD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblD.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblP_LinkClicked);
             // 
             // splitContainer7
             // 
@@ -580,6 +583,7 @@
             this.btnSavePrivateKey.TabIndex = 5;
             this.btnSavePrivateKey.Text = "Lưu khóa bí mật";
             this.btnSavePrivateKey.UseVisualStyleBackColor = true;
+            this.btnSavePrivateKey.Click += new System.EventHandler(this.btnSavePrivateKey_Click);
             // 
             // btnSavePublicKey
             // 
@@ -591,6 +595,7 @@
             this.btnSavePublicKey.TabIndex = 5;
             this.btnSavePublicKey.Text = "Lưu khóa công khai";
             this.btnSavePublicKey.UseVisualStyleBackColor = true;
+            this.btnSavePublicKey.Click += new System.EventHandler(this.btnSavePublicKey_Click);
             // 
             // btnOpenPrivateKey
             // 
@@ -602,6 +607,7 @@
             this.btnOpenPrivateKey.TabIndex = 5;
             this.btnOpenPrivateKey.Text = "Mở khóa bí mật";
             this.btnOpenPrivateKey.UseVisualStyleBackColor = true;
+            this.btnOpenPrivateKey.Click += new System.EventHandler(this.btnOpenPrivateKey_Click);
             // 
             // btnOpenPublicKey
             // 
@@ -699,8 +705,9 @@
             // splitContainer8.Panel1
             // 
             this.splitContainer8.Panel1.Controls.Add(this.rtxSource);
+            this.splitContainer8.Panel1.Controls.Add(this.btnSaveSource);
             this.splitContainer8.Panel1.Controls.Add(this.btnOpenSource);
-            this.splitContainer8.Panel1.Controls.Add(this.linkLabel7);
+            this.splitContainer8.Panel1.Controls.Add(this.llblSource);
             // 
             // splitContainer8.Panel2
             // 
@@ -720,11 +727,22 @@
             this.rtxSource.Text = "3";
             this.toolTip1.SetToolTip(this.rtxSource, "Nhập bản rõ");
             // 
+            // btnSaveSource
+            // 
+            this.btnSaveSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveSource.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSaveSource.Location = new System.Drawing.Point(239, 1);
+            this.btnSaveSource.Name = "btnSaveSource";
+            this.btnSaveSource.Size = new System.Drawing.Size(60, 23);
+            this.btnSaveSource.TabIndex = 5;
+            this.btnSaveSource.Text = "Lưu";
+            this.btnSaveSource.UseVisualStyleBackColor = true;
+            this.btnSaveSource.Click += new System.EventHandler(this.btnSaveSource_Click);
+            // 
             // btnOpenSource
             // 
-            this.btnOpenSource.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOpenSource.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOpenSource.Location = new System.Drawing.Point(239, 1);
+            this.btnOpenSource.Location = new System.Drawing.Point(-1, 1);
             this.btnOpenSource.Name = "btnOpenSource";
             this.btnOpenSource.Size = new System.Drawing.Size(60, 23);
             this.btnOpenSource.TabIndex = 5;
@@ -732,19 +750,20 @@
             this.btnOpenSource.UseVisualStyleBackColor = true;
             this.btnOpenSource.Click += new System.EventHandler(this.btnOpenSource_Click);
             // 
-            // linkLabel7
+            // llblSource
             // 
-            this.linkLabel7.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel7.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel7.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(298, 25);
-            this.linkLabel7.TabIndex = 7;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "Bản rõ";
-            this.linkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblSource.BackColor = System.Drawing.Color.Honeydew;
+            this.llblSource.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.llblSource.Dock = System.Windows.Forms.DockStyle.Top;
+            this.llblSource.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblSource.Location = new System.Drawing.Point(0, 0);
+            this.llblSource.Name = "llblSource";
+            this.llblSource.Size = new System.Drawing.Size(298, 25);
+            this.llblSource.TabIndex = 7;
+            this.llblSource.TabStop = true;
+            this.llblSource.Text = "Bản rõ";
+            this.llblSource.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblSource.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblSource_LinkClicked);
             // 
             // splitContainer9
             // 
@@ -758,14 +777,16 @@
             // splitContainer9.Panel1
             // 
             this.splitContainer9.Panel1.Controls.Add(this.rtxEncrypt);
+            this.splitContainer9.Panel1.Controls.Add(this.btnSaveEncrypt);
             this.splitContainer9.Panel1.Controls.Add(this.btnOpenEncrypt);
-            this.splitContainer9.Panel1.Controls.Add(this.linkLabel8);
+            this.splitContainer9.Panel1.Controls.Add(this.llblEncrypt);
             // 
             // splitContainer9.Panel2
             // 
             this.splitContainer9.Panel2.Controls.Add(this.rtxDecrypt);
+            this.splitContainer9.Panel2.Controls.Add(this.btnSaveDecrypt);
             this.splitContainer9.Panel2.Controls.Add(this.btnCompare);
-            this.splitContainer9.Panel2.Controls.Add(this.linkLabel9);
+            this.splitContainer9.Panel2.Controls.Add(this.llblDecrypt);
             this.splitContainer9.Size = new System.Drawing.Size(300, 409);
             this.splitContainer9.SplitterDistance = 200;
             this.splitContainer9.SplitterWidth = 2;
@@ -781,11 +802,22 @@
             this.rtxEncrypt.Text = "3";
             this.toolTip1.SetToolTip(this.rtxEncrypt, "Nhập bản mã");
             // 
+            // btnSaveEncrypt
+            // 
+            this.btnSaveEncrypt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSaveEncrypt.Location = new System.Drawing.Point(239, 1);
+            this.btnSaveEncrypt.Name = "btnSaveEncrypt";
+            this.btnSaveEncrypt.Size = new System.Drawing.Size(60, 23);
+            this.btnSaveEncrypt.TabIndex = 5;
+            this.btnSaveEncrypt.Text = "Lưu";
+            this.btnSaveEncrypt.UseVisualStyleBackColor = true;
+            this.btnSaveEncrypt.Click += new System.EventHandler(this.btnSaveEncrypt_Click);
+            // 
             // btnOpenEncrypt
             // 
-            this.btnOpenEncrypt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOpenEncrypt.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnOpenEncrypt.Location = new System.Drawing.Point(239, 1);
+            this.btnOpenEncrypt.Location = new System.Drawing.Point(-1, 1);
             this.btnOpenEncrypt.Name = "btnOpenEncrypt";
             this.btnOpenEncrypt.Size = new System.Drawing.Size(60, 23);
             this.btnOpenEncrypt.TabIndex = 5;
@@ -793,19 +825,20 @@
             this.btnOpenEncrypt.UseVisualStyleBackColor = true;
             this.btnOpenEncrypt.Click += new System.EventHandler(this.btnOpenEncrypt_Click);
             // 
-            // linkLabel8
+            // llblEncrypt
             // 
-            this.linkLabel8.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel8.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel8.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(298, 25);
-            this.linkLabel8.TabIndex = 7;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "Bản mã";
-            this.linkLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblEncrypt.BackColor = System.Drawing.Color.Honeydew;
+            this.llblEncrypt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.llblEncrypt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.llblEncrypt.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblEncrypt.Location = new System.Drawing.Point(0, 0);
+            this.llblEncrypt.Name = "llblEncrypt";
+            this.llblEncrypt.Size = new System.Drawing.Size(298, 25);
+            this.llblEncrypt.TabIndex = 7;
+            this.llblEncrypt.TabStop = true;
+            this.llblEncrypt.Text = "Bản mã";
+            this.llblEncrypt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblEncrypt.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblEncrypt_LinkClicked);
             // 
             // rtxDecrypt
             // 
@@ -818,11 +851,22 @@
             this.rtxDecrypt.Text = "3";
             this.toolTip1.SetToolTip(this.rtxDecrypt, "Bản giải mã");
             // 
+            // btnSaveDecrypt
+            // 
+            this.btnSaveDecrypt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSaveDecrypt.Location = new System.Drawing.Point(239, 1);
+            this.btnSaveDecrypt.Name = "btnSaveDecrypt";
+            this.btnSaveDecrypt.Size = new System.Drawing.Size(60, 23);
+            this.btnSaveDecrypt.TabIndex = 5;
+            this.btnSaveDecrypt.Text = "Lưu";
+            this.btnSaveDecrypt.UseVisualStyleBackColor = true;
+            this.btnSaveDecrypt.Click += new System.EventHandler(this.btnSaveDecrypt_Click);
+            // 
             // btnCompare
             // 
-            this.btnCompare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCompare.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCompare.Location = new System.Drawing.Point(239, 1);
+            this.btnCompare.Location = new System.Drawing.Point(-1, 1);
             this.btnCompare.Name = "btnCompare";
             this.btnCompare.Size = new System.Drawing.Size(60, 23);
             this.btnCompare.TabIndex = 5;
@@ -830,19 +874,20 @@
             this.btnCompare.UseVisualStyleBackColor = true;
             this.btnCompare.Click += new System.EventHandler(this.btnCompare_Click);
             // 
-            // linkLabel9
+            // llblDecrypt
             // 
-            this.linkLabel9.BackColor = System.Drawing.Color.Honeydew;
-            this.linkLabel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkLabel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.linkLabel9.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel9.Location = new System.Drawing.Point(0, 0);
-            this.linkLabel9.Name = "linkLabel9";
-            this.linkLabel9.Size = new System.Drawing.Size(298, 25);
-            this.linkLabel9.TabIndex = 7;
-            this.linkLabel9.TabStop = true;
-            this.linkLabel9.Text = "Bản giải mã";
-            this.linkLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblDecrypt.BackColor = System.Drawing.Color.Honeydew;
+            this.llblDecrypt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.llblDecrypt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.llblDecrypt.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblDecrypt.Location = new System.Drawing.Point(0, 0);
+            this.llblDecrypt.Name = "llblDecrypt";
+            this.llblDecrypt.Size = new System.Drawing.Size(298, 25);
+            this.llblDecrypt.TabIndex = 7;
+            this.llblDecrypt.TabStop = true;
+            this.llblDecrypt.Text = "Bản giải mã";
+            this.llblDecrypt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.llblDecrypt.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblDecrypt_LinkClicked);
             // 
             // toolTip1
             // 
@@ -865,7 +910,6 @@
             this.Name = "frmRSA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RSA";
-            this.Load += new System.EventHandler(this.frmRSA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudP)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -907,16 +951,16 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel llblP;
         private System.Windows.Forms.SplitContainer splitContainer5;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel llblQ;
+        private System.Windows.Forms.LinkLabel llblE;
+        private System.Windows.Forms.LinkLabel llblD;
         private System.Windows.Forms.Button btnGenQ;
         private System.Windows.Forms.NumericUpDown nudQ;
         private System.Windows.Forms.SplitContainer splitContainer6;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel6;
+        private System.Windows.Forms.LinkLabel llblN;
+        private System.Windows.Forms.LinkLabel llblPhi;
         private System.Windows.Forms.SplitContainer splitContainer7;
         private System.Windows.Forms.Button btnGenE;
         private System.Windows.Forms.SplitContainer splitContainer8;
@@ -934,11 +978,11 @@
         private System.Windows.Forms.Button btnCheckN;
         private System.Windows.Forms.SplitContainer splitContainer9;
         private System.Windows.Forms.RichTextBox rtxSource;
-        private System.Windows.Forms.LinkLabel linkLabel7;
+        private System.Windows.Forms.LinkLabel llblSource;
         private System.Windows.Forms.RichTextBox rtxEncrypt;
-        private System.Windows.Forms.LinkLabel linkLabel8;
+        private System.Windows.Forms.LinkLabel llblEncrypt;
         private System.Windows.Forms.RichTextBox rtxDecrypt;
-        private System.Windows.Forms.LinkLabel linkLabel9;
+        private System.Windows.Forms.LinkLabel llblDecrypt;
         private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Button btnOpenPublicKey;
         private System.Windows.Forms.Button btnShowPrivateKey;
@@ -952,5 +996,8 @@
         private System.Windows.Forms.Button btnOpenSource;
         private System.Windows.Forms.Button btnOpenEncrypt;
         private System.Windows.Forms.Button btnCompare;
+        private System.Windows.Forms.Button btnSaveSource;
+        private System.Windows.Forms.Button btnSaveEncrypt;
+        private System.Windows.Forms.Button btnSaveDecrypt;
     }
 }
