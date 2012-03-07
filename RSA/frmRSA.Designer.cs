@@ -249,7 +249,7 @@
             this.rtxQ.Name = "rtxQ";
             this.rtxQ.Size = new System.Drawing.Size(300, 173);
             this.rtxQ.TabIndex = 6;
-            this.rtxQ.Text = "3";
+            this.rtxQ.Text = "5";
             this.toolTip1.SetToolTip(this.rtxQ, "Nhập số nguyên tố q");
             // 
             // btnGenQ
@@ -354,7 +354,7 @@
             this.rtxN.Name = "rtxN";
             this.rtxN.Size = new System.Drawing.Size(298, 173);
             this.rtxN.TabIndex = 9;
-            this.rtxN.Text = "9";
+            this.rtxN.Text = "15";
             this.toolTip1.SetToolTip(this.rtxN, "Nhập khóa công khai n");
             // 
             // btnCheckN
@@ -403,7 +403,7 @@
             this.rtxPhi.ReadOnly = true;
             this.rtxPhi.Size = new System.Drawing.Size(300, 173);
             this.rtxPhi.TabIndex = 12;
-            this.rtxPhi.Text = "4";
+            this.rtxPhi.Text = "8";
             this.toolTip1.SetToolTip(this.rtxPhi, "phi(n)");
             // 
             // llblPhi

@@ -14,14 +14,14 @@ namespace RSA
         #region Khai báo dữ liệu
         BigInteger
             p = new BigInteger(3),
-            q = new BigInteger(3),
-            n = new BigInteger(9),
-            phi = new BigInteger(4),
+            q = new BigInteger(5),
+            n = new BigInteger(15),
+            phi = new BigInteger(8),
             e = new BigInteger(3),
             d = new BigInteger(3),
             m = new BigInteger(3),
-            c = new BigInteger(3);
-        int radix = 10;
+            c = new BigInteger(12);
+        int radix = 10;//Cơ số 10 - hệ thập phân
         #endregion
         #region Khởi tạo Form và khai báo các sự kiện thêm
         public frmRSA()
