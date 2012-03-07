@@ -117,6 +117,7 @@ namespace RSA
         {
             n = p * q;
             rtxN.Text = n.ToString();
+            setSuccessToolTip(rtxN, "Nhập khóa công khai n");
         }
 
         private bool checkE()
@@ -193,6 +194,7 @@ namespace RSA
             {
                 d = e.modInverse(phi);
                 rtxD.Text = d.ToString();
+                setSuccessToolTip(rtxD, "Nhập khóa bí mật d");
             }
             else
             {
@@ -207,7 +209,6 @@ namespace RSA
                 BigInteger k = e.modInverse(phi);
                 if (k == d)
                 {
-                    d = k;
                     setSuccessToolTip(rtxD, "Nhập khóa bí mật d");
                     MessageBox.Show("d là phần tử ngược của e", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -228,10 +229,12 @@ namespace RSA
             BigInteger k = new BigInteger(rtxN.Text, radix);
             if (k == n)
             {
+                setSuccessToolTip(rtxN, "Nhập khóa công khai n");
                 MessageBox.Show("n bằng p*q", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
+                setSuccessToolTip(rtxN, "n khác p*q");
                 MessageBox.Show("n khác p*q", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

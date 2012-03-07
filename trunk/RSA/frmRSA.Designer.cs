@@ -352,6 +352,7 @@
             this.rtxN.Size = new System.Drawing.Size(298, 173);
             this.rtxN.TabIndex = 9;
             this.rtxN.Text = "9";
+            this.toolTip1.SetToolTip(this.rtxN, "Nhập khóa công khai n");
             this.rtxN.TextChanged += new System.EventHandler(this.rtxN_TextChanged);
             // 
             // btnCheckN
