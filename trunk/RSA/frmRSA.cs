@@ -13,15 +13,24 @@ namespace RSA
     {
         #region Khai báo dữ liệu
         BigInteger
+            //Số nguyên tố lớn p
             p = new BigInteger(3),
+            //Số nguyên tố lớn q
             q = new BigInteger(5),
+            //Số nguyên lớn n=p*q
             n = new BigInteger(15),
+            //Số phi=(p-1)*(q-1)
             phi = new BigInteger(8),
+            //Số e là số nguyên tố cùng nhau với phi
             e = new BigInteger(3),
+            //Số d là phần tử ngược của e trên vành Zphi
             d = new BigInteger(3),
+            //Số m là bản rõ
             m = new BigInteger(3),
+            //Số c là bản mã
             c = new BigInteger(12);
-        int radix = 10;//Cơ số 10 - hệ thập phân
+        //Cơ số 10 - hệ thập phân
+        int radix = 10;
         #endregion
         #region Khởi tạo Form và khai báo các sự kiện thêm
         public frmRSA()
@@ -37,6 +46,7 @@ namespace RSA
         }
         #endregion
         #region Các sự kiện LostFocus
+        //Sự kiện RichTextBox hiển thị khóa bí mật d bị mất sự quan tâm
         void rtxD_LostFocus(object sender, EventArgs e)
         {
             if (checkBase(rtxD.Text) == false)
@@ -44,7 +54,7 @@ namespace RSA
             else
                 setSuccessToolTip(ref d, rtxD, "Nhập khóa bí mật d");
         }
-
+        //Sự kiện RichTextBox hiển thị khóa công khai n bị mất sự quan tâm
         void rtxN_LostFocus(object sender, EventArgs e)
         {
             if (checkBase(rtxN.Text) == false)
@@ -52,7 +62,7 @@ namespace RSA
             else
                 setSuccessToolTip(ref n, rtxN, "Nhập khóa công khai n");
         }
-
+        //Sự kiện RichTextBox hiển thị bản mã bị mất sự quan tâm
         void rtxEncrypt_LostFocus(object sender, EventArgs e)
         {
             if (checkBase(rtxEncrypt.Text) == false)
@@ -60,7 +70,7 @@ namespace RSA
             else
                 setSuccessToolTip(ref c, rtxEncrypt, "Nhập bản mã");
         }
-
+        //Sự kiện RichTextBox hiển thị bản rõ bị mất sự quan tâm
         void rtxSource_LostFocus(object sender, EventArgs e)
         {
             if (checkBase(rtxSource.Text) == false)
@@ -68,7 +78,7 @@ namespace RSA
             else
                 setSuccessToolTip(ref m, rtxSource, "Nhập bản rõ");
         }
-
+        //Sự kiện RichTextBox hiển thị khóa công khai e bị mất sự quan tâm
         void rtxE_LostFocus(object sender, EventArgs e1)
         {
             if (checkBase(rtxE.Text) == false)
@@ -76,7 +86,7 @@ namespace RSA
             else
                 setSuccessToolTip(ref e, rtxE, "Nhập khóa công khai e");
         }
-
+        //Sự kiện RichTextBox hiển thị khóa bí mật q bị mất sự quan tâm
         void rtxQ_LostFocus(object sender, EventArgs e)
         {
             if (checkBase(rtxQ.Text) == false)
@@ -87,7 +97,7 @@ namespace RSA
                 if (k.isProbablePrime())
                 {
                     q = k;
-                    setPhi();
+                    setNPhi();
                     setSuccessToolTip(rtxQ, "Nhập số nguyên tố q");
                 }
                 else
@@ -96,7 +106,7 @@ namespace RSA
                 }
             }
         }
-
+        //Sự kiện RichTextBox hiển thị khóa bí mật p bị mất sự quan tâm
         void rtxP_LostFocus(object sender, EventArgs e)
         {
             if (checkBase(rtxP.Text) == false)
@@ -107,7 +117,7 @@ namespace RSA
                 if (k.isProbablePrime())
                 {
                     p = k;
-                    setPhi();
+                    setNPhi();
                     setSuccessToolTip(rtxP, "Nhập số nguyên tố p");
                 }
                 else
@@ -119,6 +129,7 @@ namespace RSA
         #endregion
         #region Các sự kiện Click
         #region Các nút sinh
+        //Sinh ngẫu nhiên số nguyên tố lớn P
         private void btnGenP_Click(object sender, EventArgs e)
         {
             int k = (int)nudP.Value;
@@ -128,7 +139,7 @@ namespace RSA
             setSuccessToolTip(rtxP, "Nhập số nguyên tố p");
             rtxP_LostFocus(sender, e);
         }
-
+        //Sinh ngẫu nhiên số nguyên tố lớn Q
         private void btnGenQ_Click(object sender, EventArgs e)
         {
             int k = (int)nudQ.Value;
@@ -138,7 +149,7 @@ namespace RSA
             setSuccessToolTip(rtxQ, "Nhập số nguyên tố q");
             rtxQ_LostFocus(sender, e);
         }
-
+        //Sinh ngẫu nhiên số e là số nguyên tố cùng nhau với số phi
         private void btnGenE_Click(object sender, EventArgs e)
         {
             if (rtxPhi.Text != "")
@@ -152,18 +163,24 @@ namespace RSA
         }
         #endregion
         #region Các nút tính
+        //Tính n = p*q
         private void btnN_Click(object sender, EventArgs e)
         {
             n = p * q;
             rtxN.Text = n.ToString();
             setSuccessToolTip(rtxN, "Nhập khóa công khai n");
         }
-
+        //Tính d là phần tử nghịc đảo của e trên vành Zphi
         private void btnD_Click(object sender, EventArgs e1)
         {
+
             if (checkE())
             {
                 d = e.modInverse(phi);
+                /*MyBigInt e2 = new MyBigInt(e);
+                BigInteger d1 = e2.modInverse(phi);
+                if (d1 == d) MessageBox.Show("Bang nhau");
+                else MessageBox.Show(d1.ToString());*/
                 rtxD.Text = d.ToString();
                 setSuccessToolTip(rtxD, "Nhập khóa bí mật d");
             }
@@ -174,6 +191,7 @@ namespace RSA
         }
         #endregion
         #region Các nút kiểm tra
+        //Kiểm tra xem số e có phải là số nguyên tố cùng nhau với số phi hay không
         private void btnCheckE_Click(object sender, EventArgs e1)
         {
             if (checkE())
@@ -185,7 +203,7 @@ namespace RSA
                 MessageBox.Show("e không phải là số nguyên tố cùng nhau với phi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        //Kiểm tra xem số d có phải là phần tử nghịch đảo của e trên vành Zphi hay không
         private void btnCheckD_Click(object sender, EventArgs e1)
         {
             if (checkE())
@@ -207,7 +225,7 @@ namespace RSA
                 MessageBox.Show("e không phải là số nguyên tố cùng nhau với phi!", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        //Kiểm tra xem N có bằng p*q hay không
         private void btnCheckN_Click(object sender, EventArgs e)
         {
             BigInteger k = new BigInteger(rtxN.Text, radix);
@@ -237,7 +255,10 @@ namespace RSA
                 MessageBox.Show("e phải nhỏ hơn n", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            //MyBigInt m1 = new MyBigInt(m);
             m = m.modPow(e, n);
+            /*BigInteger m2 = m1.ModExp(e, n);
+            if (m2 == m) MessageBox.Show("Bang nhau");*/
             rtxEncrypt.Text = m.ToString();
         }
 
@@ -259,6 +280,7 @@ namespace RSA
         }
         #endregion
         #region Các nút ký và xác thực chữ ký
+        //Tạo chữ ký
         private void btnSign_Click(object sender, EventArgs e)
         {
             m = new BigInteger(rtxSource.Text, radix);
@@ -275,7 +297,7 @@ namespace RSA
             m = m.modPow(d, n);
             rtxEncrypt.Text = m.ToString();
         }
-
+        //Giải mã chữ ký
         private void btnVer_Click(object sender, EventArgs e1)
         {
             c = new BigInteger(rtxEncrypt.Text, radix);
@@ -292,7 +314,7 @@ namespace RSA
             c = c.modPow(e, n);
             rtxDecrypt.Text = c.ToString();
         }
-
+        //Xác thực chữ ký
         private void btnCompare_Click(object sender, EventArgs e)
         {
             if (rtxSource.Text == rtxDecrypt.Text)
@@ -400,7 +422,7 @@ namespace RSA
                         {
                             p = k;
                             rtxP.Text = st[1];
-                            setPhi();
+                            setNPhi();
                             setSuccessToolTip(rtxP, "Nhập số nguyên tố p");
                         }
                         else
@@ -412,7 +434,7 @@ namespace RSA
                         {
                             q = k;
                             rtxQ.Text = st[2];
-                            setPhi();
+                            setNPhi();
                             setSuccessToolTip(rtxQ, "Nhập số nguyên tố q");
                         }
                         else
@@ -483,12 +505,20 @@ namespace RSA
         #endregion
         #region Các hàm và phương thức hỗ trợ
         #region Hàm
+        /// <summary>
+        /// Tính toán độ tin cậy (tương đối) tương ứng với số bit của số nguyên lớn
+        /// </summary>
+        /// <param name="bitcount">Số bit của số nguyên lớn</param>
+        /// <returns>Độ tin cậy</returns>
         private int GetConfidence(int bitcount)
         {
             if (bitcount < 64) return 5;
             return 5 * (bitcount / 64);
         }
-
+        /// <summary>
+        /// Kiểm tra xem E có phải là số nguyên tố cùng nhau với phi hay không
+        /// </summary>
+        /// <returns>Một giá trị true hoặc false</returns>
         private bool checkE()
         {
             BigInteger k = new BigInteger(rtxE.Text, radix);
@@ -501,7 +531,11 @@ namespace RSA
             setSuccessToolTip(rtxE, "e không phải là số nguyên tố cùng nhau với Phi, vui lòng nhập lại!");
             return false;
         }
-
+        /// <summary>
+        /// Kiểm tra tính hợp lệ của chuỗi số nguyên hệ thập phân
+        /// </summary>
+        /// <param name="s">Chuỗi số nguyên</param>
+        /// <returns>Một giá trị true hoặc false</returns>
         private bool checkBase(String s)
         {
             int j;
@@ -518,17 +552,25 @@ namespace RSA
                 }
                 if (j == b.Length) return false;
             }
-
             return true;
         }
         #endregion
         #region Phương thức
-        private void setPhi()
+        /// <summary>
+        /// Tự động tính n và phi khi p hoặc q thay đổi
+        /// </summary>
+        private void setNPhi()
         {
+            n = p*q;
             phi = (p - 1) * (q - 1);
             rtxPhi.Text = phi.ToString();
+            rtxN.Text = n.ToString();
         }
-
+        /// <summary>
+        /// Đặt thông báo lỗi cho một RichTextBox nào đó
+        /// </summary>
+        /// <param name="control">Một RichTextBox</param>
+        /// <param name="caption">Nội dung thông báo</param>
         private void setErrorToolTip(RichTextBox control, string caption)
         {
             try
@@ -539,7 +581,11 @@ namespace RSA
             }
             catch { }
         }
-
+        /// <summary>
+        /// Đặt thông báo thành công cho một RichTexBox nào đó
+        /// </summary>
+        /// <param name="control">Một RichTextBox</param>
+        /// <param name="caption">Nội dung thông báo</param>
         private void setSuccessToolTip(RichTextBox control, string caption)
         {
             try
@@ -548,7 +594,12 @@ namespace RSA
             }
             catch { }
         }
-
+        /// <summary>
+        /// Đặt thông báo thành công đồng thời gán giá trị cho một số nguyên lớn lưu trữ giá trị của RichTextBox
+        /// </summary>
+        /// <param name="b">Một số nguyên lớn kiểu BigInteger</param>
+        /// <param name="control">Một RichTextBox</param>
+        /// <param name="caption">Nội dung thông báo</param>
         private void setSuccessToolTip(ref BigInteger b, RichTextBox control, string caption)
         {
             try
@@ -558,7 +609,12 @@ namespace RSA
             catch { }
             b = new BigInteger(control.Text, radix);
         }
-
+        /// <summary>
+        /// Mở file lấy dữ liệu
+        /// </summary>
+        /// <param name="rtx">Một RichTextBox</param>
+        /// <param name="filter">Chuỗi lọc đuôi mở rộng file</param>
+        /// <param name="title">Tiêu đề của hộp thoại</param>
         private void OpenFile(RichTextBox rtx, String filter, String title)
         {
             OpenFileDialog f = new OpenFileDialog();
@@ -575,7 +631,12 @@ namespace RSA
                 str.Dispose();
             }
         }
-
+        /// <summary>
+        /// Lưu dữ liệu ra file
+        /// </summary>
+        /// <param name="data">Dữ liệu cần lưu</param>
+        /// <param name="filter">Chuỗi lọc đuôi mở rộng file</param>
+        /// <param name="title">Tiêu đề của hộp thoại</param>
         private void SaveFile(String data, String filter, String title)
         {
             SaveFileDialog sv = new SaveFileDialog();
