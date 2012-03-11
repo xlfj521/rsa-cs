@@ -1419,7 +1419,12 @@ public class BigInteger
     //***********************************************************************
     // Modulo Exponentiation
     //***********************************************************************
-
+    /// <summary>
+    /// Calculate a^exp mod n
+    /// </summary>
+    /// <param name="exp">The exponent</param>
+    /// <param name="n">A big Integer</param>
+    /// <returns>A big Integer</returns>
     public BigInteger modPow(BigInteger exp, BigInteger n)
     {
         if ((exp.data[maxLength - 1] & 0x80000000) != 0)
@@ -1577,7 +1582,11 @@ public class BigInteger
     //***********************************************************************
     // Returns gcd(this, bi)
     //***********************************************************************
-
+    /// <summary>
+    /// Calculate GCD
+    /// </summary>
+    /// <param name="bi">A big Integer</param>
+    /// <returns>A big integer</returns>
     public BigInteger GCD(BigInteger bi)
     {
         BigInteger x;
@@ -2160,7 +2169,7 @@ public class BigInteger
     //
     // Returns true if number is probably prime.
     //***********************************************************************
-
+    
     public bool isProbablePrime(int confidence)
     {
         BigInteger thisVal;
@@ -2407,7 +2416,6 @@ Console.WriteLine("Not prime!  Divisible by {0}\n",
     //***********************************************************************
     // Generates a positive BigInteger that is probably prime.
     //***********************************************************************
-
     public static BigInteger genPseudoPrime(int bits, int confidence, Random rand)
     {
         BigInteger result = new BigInteger();
