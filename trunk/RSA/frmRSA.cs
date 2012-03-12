@@ -178,7 +178,7 @@ namespace RSA
             {
                 d = e.modInverse(phi);
                 /*MyBigInt e2 = new MyBigInt(e);
-                BigInteger d1 = e2.modInverse(phi);
+                BigInteger d1 = e2.ModInverse(phi);
                 if (d1 == d) MessageBox.Show("Bang nhau");
                 else MessageBox.Show(d1.ToString());*/
                 rtxD.Text = d.ToString();
@@ -556,6 +556,7 @@ namespace RSA
         }
         #endregion
         #region Phương thức
+        #region Các phương thức đặt giá trị cho các đối tượng
         /// <summary>
         /// Tự động tính n và phi khi p hoặc q thay đổi
         /// </summary>
@@ -609,6 +610,9 @@ namespace RSA
             catch { }
             b = new BigInteger(control.Text, radix);
         }
+        #endregion
+        #region Các phương thức mở và lưu file
+
         /// <summary>
         /// Mở file lấy dữ liệu
         /// </summary>
@@ -627,8 +631,8 @@ namespace RSA
                 StreamReader str = new StreamReader(fsr, Encoding.ASCII);
                 rtx.Text = str.ReadToEnd();
                 rtx.Focus();
-                fsr.Dispose();
                 str.Dispose();
+                fsr.Dispose();
             }
         }
         /// <summary>
@@ -647,11 +651,12 @@ namespace RSA
                 FileStream fsr = new FileStream(sv.FileName, FileMode.OpenOrCreate, FileAccess.Write);
                 StreamWriter str = new StreamWriter(fsr, Encoding.ASCII);
                 str.Write(data);
-                fsr.Dispose();
                 str.Dispose();
+                fsr.Dispose();
             }
         }
         #endregion
-        #endregion 
+        #endregion
+        #endregion
     }
 }
