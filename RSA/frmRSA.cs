@@ -386,8 +386,8 @@ namespace RSA
                         setSuccessToolTip(ref e, rtxE, "Nhập khóa công khai e");
                     }
                 }
-                fsr.Dispose();
                 str.Dispose();
+                fsr.Dispose();
             }
         }
 
@@ -443,8 +443,9 @@ namespace RSA
                         }
                     }
                 }
-                fsr.Dispose();
                 str.Dispose();
+                fsr.Dispose();
+
             }
         }
         #endregion
