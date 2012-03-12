@@ -4,6 +4,9 @@ using System.Text;
 
 namespace RSA
 {
+    /// <summary>
+    /// Lớp tự xây dựng để kiểm thử độ chính xác của các thuật toán
+    /// </summary>
     class MyBigInt : BigInteger
     {
         public MyBigInt()
